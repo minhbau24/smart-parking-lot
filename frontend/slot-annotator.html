@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Slot Annotator - Smart Parking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #00d4ff;
+        }
+
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+        }
+
+        .canvas-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .control-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            display: inline-block;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        #video-feed {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #draw-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: crosshair;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #45a049;
+        }
+
+        .btn-danger {
+            background: #f44336;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #da190b;
+        }
+
+        .btn-info {
+            background: #00d4ff;
+            color: #1a1a2e;
+        }
+
+        .btn-info:hover {
+            background: #00b8d4;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        kbd {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .slot-list {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+
+        .slot-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .slot-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .slot-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 0.85em;
+        }
+
+        .info-box {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 4px solid #00d4ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .status {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: white;
+        }
+
+        .color-preview {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            border: 2px solid white;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🅿️ Parking Slot Annotator</h1>
+            <p style="margin-top: 10px; color: #aaa;">Draw parking slots on video frame</p>
+        </header>
+
+        <div class="main-layout">
+            <!-- Canvas Panel -->
+            <div class="canvas-panel">
+                <h2 style="color: #00d4ff; margin-bottom: 15px;">Video Frame</h2>
+
+                <div class="video-wrapper" id="video-wrapper">
+                    <img id="video-feed" src="" alt="Video Frame" style="display: none;">
+                    <canvas id="draw-canvas"></canvas>
+                </div>
+
+                <div class="status" style="margin-top: 15px;">
+                    <strong>Camera:</strong> <span id="camera-name">Loading...</span><br>
+                    <strong>Mode:</strong> <span id="draw-mode">Drawing Disabled</span><br>
+                    <strong>Current Polygon:</strong> <span id="point-count">0 points</span>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <h2 style="color: #00d4ff; margin-bottom: 15px;">Controls</h2>
+
+                <div class="info-box">
+                    ℹ️ <strong>How to draw:</strong><br>
+                    1. Click to add points<br>
+                    2. Press <kbd>Enter</kbd> or <kbd>Space</kbd> to finish<br>
+                    3. Press <kbd>Esc</kbd> to cancel<br>
+                    4. Press <kbd>Backspace</kbd> to undo last point
+                </div>
+
+                <button class="btn btn-primary" id="start-draw-btn">
+                    ✏️ Start Drawing Slot
+                </button>
+
+                <button class="btn btn-danger" id="undo-point-btn" disabled>
+                    ↩️ Undo Last Point
+                </button>
+
+                <button class="btn btn-danger" id="clear-current-btn" disabled>
+                    🗑️ Clear Current Polygon
+                </button>
+
+                <button class="btn btn-info" id="save-all-btn" disabled>
+                    💾 Save All Slots to DB
+                </button>
+
+                <button class="btn" style="background: #ff9800;" id="refresh-frame-btn">
+                    🔄 Refresh Frame
+                </button>
+
+                <button class="btn" style="background: #666;" onclick="window.location.href='main.html'">
+                    ← Back to Live View
+                </button>
+
+                <hr style="margin: 20px 0; border-color: rgba(255,255,255,0.2);">
+
+                <div class="input-group">
+                    <label>Slot Name Prefix:</label>
+                    <input type="text" id="slot-prefix" value="Slot" placeholder="e.g., A, B, VIP">
+                </div>
+
+                <div class="input-group">
+                    <label>Polygon Color: <span class="color-preview" id="color-preview"
+                            style="background: #00ff00;"></span></label>
+                    <input type="color" id="polygon-color" value="#00ff00">
+                </div>
+
+                <h3 style="color: #00d4ff; margin-top: 20px; margin-bottom: 10px;">
+                    Drawn Slots (<span id="slot-count">0</span>)
+                </h3>
+
+                <div class="slot-list" id="slot-list">
+                    <p style="color: #666; text-align: center; padding: 20px;">No slots yet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="slot-annotator.js"></script>
+</body>
+
+</html>

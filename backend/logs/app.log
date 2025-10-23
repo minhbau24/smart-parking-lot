@@ -1,0 +1,2222 @@
+2025-10-22 14:52:56 - smart_parking - INFO - Test log message
+2025-10-22 14:58:39 - smart_parking - INFO - Test log message
+2025-10-22 18:23:17 - smart_parking - ERROR - Error processing detections: (asyncmy.errors.IntegrityError) (1048, "Column 'class_name' cannot be null")
+[SQL: INSERT INTO detections (camera_id, bbox, confidence, class_name, timestamp) VALUES (%s, %s, %s, %s, %s)]
+[parameters: (1, '[10, 10, 80, 80]', 0.95, None, datetime.datetime(2025, 10, 22, 11, 23, 17, 712449, tzinfo=datetime.timezone.utc))]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-10-22 18:23:36 - smart_parking - ERROR - Error processing detections: (asyncmy.errors.IntegrityError) (1048, "Column 'class_name' cannot be null")
+[SQL: INSERT INTO detections (camera_id, bbox, confidence, class_name, timestamp) VALUES (%s, %s, %s, %s, %s)]
+[parameters: (2, '[10, 10, 80, 80]', 0.95, None, datetime.datetime(2025, 10, 22, 11, 23, 36, 981443, tzinfo=datetime.timezone.utc))]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-10-22 18:25:42 - smart_parking - INFO - Slot 3 status changed from empty to occupied
+2025-10-22 18:25:42 - smart_parking - INFO - Processed 1 detections for camera 3
+2025-10-22 18:25:52 - smart_parking - INFO - Slot 4 status changed from empty to occupied
+2025-10-22 18:25:52 - smart_parking - INFO - Processed 1 detections for camera 4
+2025-10-22 18:27:05 - smart_parking - INFO - Slot 5 status changed from empty to occupied
+2025-10-22 18:27:05 - smart_parking - INFO - Processed 1 detections for camera 5
+2025-10-22 18:28:41 - smart_parking - INFO - Slot 6 status changed from empty to occupied
+2025-10-22 18:28:41 - smart_parking - INFO - Processed 1 detections for camera 6
+2025-10-22 19:49:54 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 19:50:44 - smart_parking - WARNING - Detector not initialized
+2025-10-22 19:51:09 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 19:52:21 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 19:52:22 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 19:52:59 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 19:52:59 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 20:06:49 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 20:06:53 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:07:17 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:07:18 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:07:18 - smart_parking - WARNING - Detector not initialized
+2025-10-22 20:07:24 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:08:00 - smart_parking - WARNING - Detector not initialized
+2025-10-22 20:08:01 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:08:04 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:08:04 - smart_parking - WARNING - Detector not initialized
+2025-10-22 20:08:04 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:08:05 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:08:12 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:08:12 - smart_parking - WARNING - Detector not initialized
+2025-10-22 20:08:14 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:08:40 - smart_parking - WARNING - Detector not initialized
+2025-10-22 20:08:40 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:08:46 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:08:46 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:08:46 - smart_parking - WARNING - Detector not initialized
+2025-10-22 20:08:47 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:08:55 - smart_parking - WARNING - Detector not initialized
+2025-10-22 20:08:55 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:09:37 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:09:37 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 20:10:35 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 20:10:35 - smart_parking - INFO - Initialized YOLO detector for camera 1
+2025-10-22 20:10:35 - smart_parking - INFO - Started YOLO detector for camera 1
+2025-10-22 20:10:35 - smart_parking - INFO - YOLO detector started
+2025-10-22 20:10:39 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:10:41 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 20:10:43 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 20:10:45 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:46 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-14' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-14' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:46 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:46 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-23' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-23' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:47 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:47 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-32' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-32' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:47 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:47 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-41' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-41' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:48 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:48 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-50' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-50' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:49 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:49 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-59' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-59' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:49 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:49 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-68' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-68' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:50 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:50 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-77' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-77' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:50 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:50 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-86' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-86' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:51 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:51 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-95' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-95' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:51 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:52 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-104' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-104' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:52 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:10:52 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:10:52 - smart_parking - ERROR - Error handling detections: Task <Task pending name='Task-113' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+Traceback (most recent call last):
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py", line 169, in _handle_detections
+    slot_status_map = await match_detections_to_slots(
+  File "C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\slot_service.py", line 73, in match_detections_to_slots
+    result = await db.execute(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 455, in execute
+    result = await greenlet_spawn(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 190, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1368, in _checkout
+    with util.safe_reraise():
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\pool\base.py", line 1306, in _checkout
+    result = pool._dialect._do_ping_w_event(
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\engine\default.py", line 709, in _do_ping_w_event
+    return self.do_ping(dbapi_connection)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\pymysql.py", line 105, in do_ping
+    dbapi_connection.ping(False)
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 200, in ping
+    return self.await_(self._do_ping())
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\site-packages\sqlalchemy\dialects\mysql\asyncmy.py", line 204, in _do_ping
+    return await self._connection.ping(False)
+  File "asyncmy\\connection.pyx", line 532, in ping
+  File "asyncmy\\connection.pyx", line 526, in asyncmy.connection.Connection.ping
+  File "asyncmy\\connection.pyx", line 375, in _read_ok_packet
+  File "asyncmy\\connection.pyx", line 617, in read_packet
+  File "asyncmy\\connection.pyx", line 656, in _read_bytes
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 708, in readexactly
+    await self._wait_for_data('readexactly')
+  File "C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\streams.py", line 501, in _wait_for_data
+    await self._waiter
+RuntimeError: Task <Task pending name='Task-113' coro=<YOLODetector._handle_detections() running at C:\Users\luumi\OneDrive - ptit.edu.vn\smart parking lot\backend\app\services\ai_listener.py:169> cb=[_run_until_complete_cb() at C:\Users\luumi\anaconda3\envs\smart-paking-lot\lib\asyncio\base_events.py:184]> got Future <Future pending> attached to a different loop
+2025-10-22 20:10:52 - smart_parking - INFO - Stopped YOLO detector for camera 1
+2025-10-22 20:10:52 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 20:21:48 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 20:21:48 - smart_parking - INFO - Initialized YOLO detector for camera 1
+2025-10-22 20:21:48 - smart_parking - INFO - Started YOLO detector for camera 1
+2025-10-22 20:21:48 - smart_parking - INFO - YOLO detector started
+2025-10-22 20:21:49 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:21:50 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 20:21:52 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 20:21:52 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:53 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:53 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:53 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:53 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:54 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:55 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:55 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:55 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:55 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:55 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:21:56 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:21:56 - smart_parking - INFO - Stopped YOLO detector for camera 1
+2025-10-22 20:21:56 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 20:25:32 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 20:25:32 - smart_parking - INFO - Initialized YOLO detector for camera 1
+2025-10-22 20:25:32 - smart_parking - INFO - Started YOLO detector for camera 1
+2025-10-22 20:25:32 - smart_parking - INFO - YOLO detector started
+2025-10-22 20:25:32 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:25:34 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 20:25:36 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 20:25:51 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:25:51 - smart_parking - WARNING - Detector not initialized
+2025-10-22 20:25:51 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:25:54 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:25:58 - smart_parking - WARNING - Detector not initialized
+2025-10-22 20:25:58 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:26:16 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:17 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:17 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:18 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:33 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:33 - smart_parking - INFO - Processed 2 detections, updated 1 slots
+2025-10-22 20:26:33 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:34 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:34 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:34 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:34 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:35 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:35 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:35 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:36 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:36 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:36 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:26:36 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:26:37 - smart_parking - INFO - Stopped YOLO detector for camera 1
+2025-10-22 20:26:37 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 20:29:35 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 20:29:35 - smart_parking - INFO - Initialized YOLO detector for camera 1
+2025-10-22 20:29:35 - smart_parking - INFO - Started YOLO detector for camera 1
+2025-10-22 20:29:35 - smart_parking - INFO - YOLO detector started
+2025-10-22 20:29:35 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:29:37 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 20:29:39 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 20:29:40 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:29:41 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:29:45 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:29:45 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:29:45 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:29:45 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:29:47 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:29:47 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:29:48 - smart_parking - INFO - Stopped YOLO detector for camera 1
+2025-10-22 20:29:48 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 20:31:33 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 20:31:33 - smart_parking - INFO - Initialized YOLO detector for camera 1
+2025-10-22 20:31:33 - smart_parking - INFO - Started YOLO detector for camera 1
+2025-10-22 20:31:33 - smart_parking - INFO - YOLO detector started
+2025-10-22 20:31:34 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:31:35 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 20:31:37 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 20:31:41 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:41 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:42 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:42 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:42 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:42 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:43 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:43 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:43 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:43 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:44 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:44 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:44 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:44 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:44 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:45 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:45 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:45 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:46 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:46 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:46 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:47 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:47 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:47 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:31:47 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:31:47 - smart_parking - INFO - Stopped YOLO detector for camera 1
+2025-10-22 20:31:47 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 20:35:20 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 20:35:20 - smart_parking - INFO - Initialized YOLO detector for camera 1
+2025-10-22 20:35:20 - smart_parking - INFO - Started YOLO detector for camera 1
+2025-10-22 20:35:20 - smart_parking - INFO - YOLO detector started
+2025-10-22 20:35:21 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:35:23 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 20:35:25 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 20:35:26 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:26 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:26 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:26 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:27 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:27 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:27 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:27 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:27 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:28 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:28 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:28 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:28 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:29 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:29 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:29 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:29 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:29 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:30 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:30 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:30 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:30 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:31 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:31 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:31 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:31 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:32 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:32 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:35:32 - smart_parking - INFO - Processed 1 detections, updated 1 slots
+2025-10-22 20:35:32 - smart_parking - INFO - Stopped YOLO detector for camera 1
+2025-10-22 20:35:32 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 20:46:24 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 20:46:24 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 20:46:24 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 20:46:24 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 20:46:27 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:46:34 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:46:44 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:47:08 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:47:23 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:49:52 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:49:52 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:49:58 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:50:25 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 20:50:25 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 20:50:25 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 20:50:25 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 20:50:28 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:50:30 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 20:50:30 - smart_parking - ERROR - Failed to open camera: 0
+2025-10-22 20:50:45 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:50:53 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:51:51 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:52:59 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 20:52:59 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 20:52:59 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 20:52:59 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 20:53:13 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:53:24 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:53:32 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:54:30 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:54:30 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 20:57:13 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 20:57:13 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 20:57:13 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 20:57:13 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 20:57:16 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 20:57:46 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 20:58:21 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 21:00:32 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 21:00:32 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 21:00:32 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 21:00:32 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 21:00:42 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 21:00:42 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 21:00:42 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 21:00:42 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 21:00:46 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:00:47 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 21:00:47 - smart_parking - ERROR - Failed to open camera: 0
+2025-10-22 21:02:28 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:02:28 - smart_parking - INFO - Stopped YOLO detector for camera 7
+2025-10-22 21:02:28 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:02:28 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 21:02:31 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 21:02:31 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 21:02:31 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 21:02:31 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 21:02:32 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:02:35 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:02:38 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 21:02:38 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 21:02:38 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 21:02:38 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 21:02:41 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:02:42 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 21:02:42 - smart_parking - INFO - Using webcam index: 0
+2025-10-22 21:02:46 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 21:03:41 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:03:44 - smart_parking - INFO - Stopped YOLO detector for camera 7
+2025-10-22 21:03:44 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:03:44 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:03:47 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:03:50 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:04:02 - smart_parking - INFO - Initialized YOLO detector for camera 1
+2025-10-22 21:04:02 - smart_parking - INFO - Started YOLO detector for camera 1
+2025-10-22 21:04:02 - smart_parking - INFO - Registered detector for camera 1
+2025-10-22 21:04:02 - smart_parking - INFO - Started detector for camera 1
+2025-10-22 21:04:02 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 21:04:02 - smart_parking - INFO - Using stream URL: rtsp://example.com/stream
+2025-10-22 21:04:04 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:04:11 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:04:13 - smart_parking - INFO - Stopped YOLO detector for camera 1
+2025-10-22 21:04:13 - smart_parking - INFO - Stopped detector for camera 1
+2025-10-22 21:04:13 - smart_parking - INFO - Stopped detector for camera 1
+2025-10-22 21:04:16 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:05:09 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:13:28 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 21:13:28 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 21:13:28 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 21:13:28 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 21:17:20 - smart_parking - INFO - Initialized YOLO detector for camera 6
+2025-10-22 21:17:20 - smart_parking - INFO - Started YOLO detector for camera 6
+2025-10-22 21:17:20 - smart_parking - INFO - Registered detector for camera 6
+2025-10-22 21:17:20 - smart_parking - INFO - Started detector for camera 6
+2025-10-22 21:17:22 - smart_parking - INFO - Stopped YOLO detector for camera 6
+2025-10-22 21:17:22 - smart_parking - INFO - Stopped detector for camera 6
+2025-10-22 21:17:22 - smart_parking - INFO - Stopped detector for camera 6
+2025-10-22 21:17:25 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 21:17:25 - smart_parking - INFO - Using stream URL: rtsp://example.com/stream
+2025-10-22 21:20:27 - smart_parking - ERROR - Failed to open camera: rtsp://example.com/stream
+2025-10-22 21:23:51 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 21:23:51 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 21:23:51 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 21:23:51 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 21:23:51 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 21:23:51 - smart_parking - INFO - Using webcam index: 0
+2025-10-22 21:23:54 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:23:55 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 21:23:59 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:23:59 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:00 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:00 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:01 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:01 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:01 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:02 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:02 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:03 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:03 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:03 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:04 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:24:36 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:24:39 - smart_parking - INFO - Stopped YOLO detector for camera 7
+2025-10-22 21:24:39 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:24:39 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:24:42 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:27:49 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:27:49 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 21:27:54 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 21:27:54 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 21:27:54 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 21:27:54 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 21:27:54 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:28:12 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:28:12 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:28:16 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:28:48 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 21:28:48 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 21:28:48 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 21:28:48 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 21:28:52 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:28:56 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:29:07 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:29:10 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 21:29:10 - smart_parking - INFO - Using webcam index: 0
+2025-10-22 21:29:13 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:29:14 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 21:29:14 - smart_parking - INFO - Stopped YOLO detector for camera 7
+2025-10-22 21:29:14 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:29:15 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:29:16 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 21:29:16 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 21:29:16 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 21:29:16 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 21:29:18 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 21:29:18 - smart_parking - INFO - Using webcam index: 0
+2025-10-22 21:29:20 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 21:29:21 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:21 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:22 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:22 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:22 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:23 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:24 - smart_parking - WARNING - Failed to read frame
+2025-10-22 21:29:24 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:25 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:29:25 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:25 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:26 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:28 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:29 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:29 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:29 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:30 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:30 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:30 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:31 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:31 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:31 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:32 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:32 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:32 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:32 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:33 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:33 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:34 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:35 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:36 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:37 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:37 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:38 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:39 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:40 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:41 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:41 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:42 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:43 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:43 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:44 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:45 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:45 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:46 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:47 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:47 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:48 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:49 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:50 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:51 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:51 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:52 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:53 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:54 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:55 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:55 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:56 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:57 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 21:29:58 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:58 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:29:59 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:00 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:01 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:01 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:01 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:02 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:02 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:02 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:03 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:03 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:03 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:04 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:04 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:04 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:05 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:05 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:05 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:07 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:08 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:15 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:20 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:23 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:30:25 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:26 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 21:30:26 - smart_parking - INFO - Stopped YOLO detector for camera 7
+2025-10-22 21:30:26 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:30:26 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:35:25 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 21:35:25 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 21:35:25 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 21:35:25 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 21:35:38 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 21:35:38 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 21:35:38 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 21:35:38 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 21:35:41 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:36:06 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:36:11 - smart_parking - INFO - Stopped YOLO detector for camera 7
+2025-10-22 21:36:11 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:36:11 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:36:22 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 21:36:22 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 21:36:22 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 21:36:22 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 21:36:28 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:37:23 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:37:23 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:37:31 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:37:39 - smart_parking - INFO - Stopped YOLO detector for camera 7
+2025-10-22 21:37:39 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:37:39 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:37:45 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 21:37:45 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 21:37:45 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 21:37:45 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 21:38:28 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 21:38:28 - smart_parking - INFO - Using webcam index: 0
+2025-10-22 21:38:29 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 21:38:29 - smart_parking - INFO - Using webcam index: 0
+2025-10-22 21:38:29 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 21:38:29 - smart_parking - INFO - Using webcam index: 0
+2025-10-22 21:38:32 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 21:38:32 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 21:38:33 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 21:38:40 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 21:38:54 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 21:38:58 - smart_parking - INFO - Stopped YOLO detector for camera 7
+2025-10-22 21:38:58 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 21:38:58 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 22:02:12 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:02:12 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:02:12 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:02:12 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:02:48 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 22:02:48 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 22:02:48 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 22:02:48 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 22:02:50 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 22:02:50 - smart_parking - INFO - Using webcam index: 0
+2025-10-22 22:02:52 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:02:59 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:03:02 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:03 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:03 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:03 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:04 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:04 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:04 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:04 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:05 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:05 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:06 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:06 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:06 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:07 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:07 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:08 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:08 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:08 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:09 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:09 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:10 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:10 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:10 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:11 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:11 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:12 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:12 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:12 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:13 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:13 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:13 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:13 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:14 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:14 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:14 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:14 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:15 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:15 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:15 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:15 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:16 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:16 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:16 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:16 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:17 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:17 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:17 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:17 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:18 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:18 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:18 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:18 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:18 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:19 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:19 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:19 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:19 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:20 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:20 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:20 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:20 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:21 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:21 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:21 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:21 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:22 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:22 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:22 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:22 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:23 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:23 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:23 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:23 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:23 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:24 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:24 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:25 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:25 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:25 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:26 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:27 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:28 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:28 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:28 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:29 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:29 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:30 - smart_parking - INFO - Processed 2 detections, updated 0 slots
+2025-10-22 22:03:30 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:31 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:31 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:31 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:31 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:32 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:32 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:32 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:33 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:33 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:33 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:33 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:34 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:34 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:34 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:34 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:35 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:35 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:35 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:36 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:37 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:03:37 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:37 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:38 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:38 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:38 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:39 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:03:39 - smart_parking - INFO - Stopped YOLO detector for camera 7
+2025-10-22 22:03:39 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 22:03:39 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 22:03:39 - smart_parking - INFO - Processed 1 detections, updated 0 slots
+2025-10-22 22:06:16 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:06:20 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:06:20 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:06:20 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:06:20 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:06:30 - smart_parking - INFO - Initialized YOLO detector for camera 7
+2025-10-22 22:06:30 - smart_parking - INFO - Started YOLO detector for camera 7
+2025-10-22 22:06:30 - smart_parking - INFO - Registered detector for camera 7
+2025-10-22 22:06:30 - smart_parking - INFO - Started detector for camera 7
+2025-10-22 22:06:33 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 22:06:33 - smart_parking - INFO - Using webcam index: 0
+2025-10-22 22:06:34 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:06:39 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:07:30 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:07:37 - smart_parking - INFO - Stopped YOLO detector for camera 7
+2025-10-22 22:07:37 - smart_parking - INFO - Stopped detector for camera 7
+2025-10-22 22:07:37 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:08:31 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:08:31 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:08:31 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:08:31 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:09:41 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:09:55 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:09:55 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:09:55 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:09:55 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:10:02 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:10:02 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:10:02 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:10:02 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:10:06 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:10:07 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 22:10:07 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp.mp4
+2025-10-22 22:10:07 - smart_parking - ERROR - Failed to open camera: C:\Users\luumi\OneDrive - ptit.edu.vn\temp.mp4
+2025-10-22 22:11:40 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:12:29 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:12:29 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:12:29 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:12:29 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:12:37 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:12:37 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:12:37 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:12:37 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:12:40 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 22:12:40 - smart_parking - ERROR - Video file not found: C:\Users\luumi\OneDrive - ptit.edu.vn\temp.mp4
+2025-10-22 22:13:17 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:13:17 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:13:17 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:13:19 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:13:37 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:13:37 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:13:37 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:13:37 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:13:47 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:13:47 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:13:47 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:13:47 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:13:50 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 22:13:50 - smart_parking - INFO - Using video file: C:/Users/luumi/OneDrive - ptit.edu.vn/temp/sample2.mp4
+2025-10-22 22:13:50 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:13:55 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:14:44 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:14:45 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:14:45 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:14:45 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:14:51 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:15:52 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:15:52 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:15:52 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:15:52 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:16:04 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:16:04 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:16:04 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:16:04 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:16:07 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 22:16:07 - smart_parking - INFO - Using video file: C:/Users/luumi/OneDrive - ptit.edu.vn/temp/sample2.mp4
+2025-10-22 22:16:07 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:17:22 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:22 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:22 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:22 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:22 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:22 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:22 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:22 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:23 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:23 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:23 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:23 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:23 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:23 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:23 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:23 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:23 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:24 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:24 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:24 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:24 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:24 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:24 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:24 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:24 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:24 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:25 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:25 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:25 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:25 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:25 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:25 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:25 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:25 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:25 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:25 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:26 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:26 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:26 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:26 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:26 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:26 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:26 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:26 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:27 - smart_parking - WARNING - Failed to read frame
+2025-10-22 22:17:27 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:17:27 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:17:27 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:20:37 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:20:37 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:20:37 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:20:37 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:20:51 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:20:51 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:20:51 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:20:51 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:20:53 - smart_parking - INFO - Loaded YOLO model: yolov8n.pt
+2025-10-22 22:20:53 - smart_parking - INFO - Using video file: C:/Users/luumi/OneDrive - ptit.edu.vn/temp/sample2.mp4
+2025-10-22 22:20:54 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:21:35 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:21:35 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:21:35 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:21:42 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:21:50 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:21:50 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:21:50 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:21:50 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:22:06 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:22:06 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:22:06 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:22:06 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:22:09 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-22 22:22:09 - smart_parking - INFO - Using video file: C:/Users/luumi/OneDrive - ptit.edu.vn/temp/sample2.mp4
+2025-10-22 22:22:09 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:22:14 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:23:38 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:23:40 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:23:40 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:23:40 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:23:44 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:23:48 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:23:48 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:23:48 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:23:48 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:23:57 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:23:57 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:23:57 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:23:57 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:24:00 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-22 22:24:00 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-22 22:24:00 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:24:02 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:24:25 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:24:27 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:24:27 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:24:27 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:24:30 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:29:38 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:29:38 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:29:38 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:29:38 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:29:49 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:29:49 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:29:49 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:29:49 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:29:51 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:30:17 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:30:25 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:30:25 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:30:25 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:31:00 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:31:00 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:31:00 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:31:00 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:31:11 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:31:11 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:31:11 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:31:11 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:31:13 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-22 22:31:13 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-22 22:31:13 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:31:14 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:15 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:15 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:16 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:17 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:17 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:18 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:31:18 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:19 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:20 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:21 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:22 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:23 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:24 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:24 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:31:25 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:31:26 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:27 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:28 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:29 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:30 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:31 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:31 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:32 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:33 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:34 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:34 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:35 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:35 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:36 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:31:37 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:31:38 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:31:38 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:31:39 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:31:40 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:31:40 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:31:40 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:31:40 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:31:41 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:31:47 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:36:23 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:36:23 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:36:26 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:36:26 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:36:26 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:36:26 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:36:27 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:36:31 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:36:34 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:36:34 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:36:34 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:36:34 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:36:38 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:37:00 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:37:06 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-22 22:37:06 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-22 22:37:06 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:37:07 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:07 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:08 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:08 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:09 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:10 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:10 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:11 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:12 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:37:12 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:13 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:14 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:15 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:16 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:17 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:37:18 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:37:19 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:20 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:21 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:22 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:23 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:24 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:24 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:25 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:26 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:28 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:29 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:31 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:32 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:34 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:35 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:37:37 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:37:38 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:37:40 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:37:41 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:37:43 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:37:45 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:47 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:47 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:37:48 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:37:49 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:37:50 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:37:51 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:37:51 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:37:51 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:37:51 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:37:52 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:41:52 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:41:52 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:41:52 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:41:52 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:41:53 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-22 22:41:53 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-22 22:41:53 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:41:54 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:41:55 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:41:55 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:41:56 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:41:57 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:41:57 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:41:58 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:41:59 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:00 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:01 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:02 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:03 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:04 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:04 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:05 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:06 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:07 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:08 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:09 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:10 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:10 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:11 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:12 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:13 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:14 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:15 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:15 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:16 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:17 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:18 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:19 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:42:20 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:42:21 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:42:21 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:42:22 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:42:23 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:42:24 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:25 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:26 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:27 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:27 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:28 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:29 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:42:30 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:31 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:32 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:33 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:34 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:34 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:35 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:36 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:36 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:37 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:38 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:39 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:40 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:41 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:42 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:42 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:42:43 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:43 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:44 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:45 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:42:45 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:42:45 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:42:45 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:42:49 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 22:50:32 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:50:32 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:50:32 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:50:32 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 22:50:41 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 22:50:41 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 22:50:41 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 22:50:41 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 22:50:44 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-22 22:50:44 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-22 22:50:44 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 22:50:45 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:46 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:47 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 22:50:47 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:48 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:49 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:50 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:51 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:52 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:53 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:54 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:55 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:55 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:56 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:50:57 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:50:58 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:50:59 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:00 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:01 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:02 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:03 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:04 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:04 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:05 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:06 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:07 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:08 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:09 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:10 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:10 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:11 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:51:12 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:51:13 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:51:14 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:51:15 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:51:16 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 22:51:17 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:18 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:19 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:21 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:22 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:23 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:24 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 22:51:25 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:27 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:28 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:29 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:30 - smart_parking - INFO - WebSocket connected. Total: 2
+2025-10-22 22:51:30 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:32 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:33 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:34 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:36 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:37 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:39 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:41 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:43 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:44 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:46 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:48 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:50 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:51 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:52 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:54 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:55 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:56 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:51:58 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:00 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:02 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:03 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:05 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:06 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:08 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:09 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:11 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:12 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:14 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:15 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:17 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:18 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:20 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:22 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:24 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:25 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:27 - smart_parking - INFO - WebSocket connected. Total: 3
+2025-10-22 22:52:27 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:28 - smart_parking - INFO - WebSocket disconnected. Total: 2
+2025-10-22 22:52:29 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:52:31 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 22:52:31 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:52:31 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 22:52:31 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 22:56:03 - smart_parking - INFO - WebSocket disconnected. Total: 1
+2025-10-22 22:56:03 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 22:59:59 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 22:59:59 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 22:59:59 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 22:59:59 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 23:00:00 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 23:00:05 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 23:00:08 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 23:00:08 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 23:00:08 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 23:00:08 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 23:00:11 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 23:00:18 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-22 23:00:18 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-22 23:00:18 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 23:00:19 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:20 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:20 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:21 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:22 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:23 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:24 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:25 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:26 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:27 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:28 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:29 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:29 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:30 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:00:31 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:00:32 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:33 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:34 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:35 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:36 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:37 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:38 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:39 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:39 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:40 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:41 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:42 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:43 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:44 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:45 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 23:00:46 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 23:00:47 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 23:00:48 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 23:00:49 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 23:00:51 - smart_parking - INFO - Processed 55 detections, updated 0 slots
+2025-10-22 23:00:52 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:53 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:54 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:00:55 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:00:57 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:00:58 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:00:59 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:01:01 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:02 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:03 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:04 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:05 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:06 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:07 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:08 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:09 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:10 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:12 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:13 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:14 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:15 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:17 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:18 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:19 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:21 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:22 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:23 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:24 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:26 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:27 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:28 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:29 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:30 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:31 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:32 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:32 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:33 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:34 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:34 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:35 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:37 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:38 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:40 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 23:01:40 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:42 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:01:42 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 23:01:42 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 23:01:42 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 23:07:43 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 23:09:24 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 23:09:24 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 23:09:24 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 23:09:24 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 23:09:35 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 23:09:35 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 23:09:35 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 23:09:35 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 23:09:38 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 23:09:41 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-22 23:09:41 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-22 23:09:41 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 23:09:42 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:42 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:43 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:44 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:44 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:45 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:46 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:47 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:48 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:49 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:50 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:51 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:52 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:53 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:09:54 - smart_parking - INFO - Processed 53 detections, updated 0 slots
+2025-10-22 23:09:55 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:56 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:57 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:58 - smart_parking - INFO - Processed 54 detections, updated 0 slots
+2025-10-22 23:09:59 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:00 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:01 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:02 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:03 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:04 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:04 - smart_parking - INFO - WebSocket connected. Total: 2
+2025-10-22 23:10:05 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:06 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:06 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:07 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:08 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:10:09 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:10:11 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:10:12 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:10:15 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:10:16 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:10:17 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:18 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:19 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:20 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:20 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:21 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:23 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:10:24 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:26 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:28 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:30 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:32 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:34 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:36 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:37 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:39 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:39 - smart_parking - INFO - WebSocket disconnected. Total: 1
+2025-10-22 23:10:41 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 23:10:41 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:42 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:43 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:10:43 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 23:10:43 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 23:10:43 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 23:10:48 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 23:10:52 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 23:10:52 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-22 23:12:09 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-22 23:12:09 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-22 23:12:09 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-22 23:12:09 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-22 23:12:11 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 23:12:15 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 23:12:19 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-22 23:12:19 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-22 23:12:19 - smart_parking - INFO - Registered detector for camera 8
+2025-10-22 23:12:19 - smart_parking - INFO - Started detector for camera 8
+2025-10-22 23:12:22 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-22 23:12:24 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-22 23:12:24 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-22 23:12:24 - smart_parking - INFO - Camera FPS: 30
+2025-10-22 23:12:26 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:26 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:27 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:28 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:29 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:30 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:31 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:32 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:33 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:34 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:35 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:36 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:37 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:38 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:12:39 - smart_parking - INFO - Processed 53 detections, updated 1 slots
+2025-10-22 23:12:40 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:41 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:42 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:43 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:44 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:45 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:45 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:46 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:47 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:48 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:49 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:50 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:50 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:51 - smart_parking - INFO - Processed 54 detections, updated 1 slots
+2025-10-22 23:12:52 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:12:53 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:12:54 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:12:55 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:12:56 - smart_parking - INFO - Processed 55 detections, updated 1 slots
+2025-10-22 23:12:57 - smart_parking - INFO - Processed 55 detections, updated 2 slots
+2025-10-22 23:12:57 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-22 23:12:58 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-22 23:12:59 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-22 23:13:00 - smart_parking - INFO - WebSocket connected. Total: 2
+2025-10-22 23:13:00 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-22 23:13:01 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-22 23:13:02 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-22 23:13:03 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-22 23:13:05 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-22 23:13:07 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-22 23:13:08 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-22 23:13:09 - smart_parking - INFO - WebSocket disconnected. Total: 1
+2025-10-22 23:13:10 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-22 23:13:11 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-22 23:13:12 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-22 23:13:12 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 23:13:12 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-22 23:13:12 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-22 23:15:26 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-22 23:15:32 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-23 08:27:43 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-23 08:27:43 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-23 08:27:43 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-23 08:27:43 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-23 08:27:48 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-23 08:27:52 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-23 08:27:55 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-23 08:27:55 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-23 08:27:55 - smart_parking - INFO - Registered detector for camera 8
+2025-10-23 08:27:55 - smart_parking - INFO - Started detector for camera 8
+2025-10-23 08:27:59 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-23 08:28:26 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-23 08:28:30 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-23 08:28:30 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-23 08:28:30 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-23 08:28:37 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-23 08:28:37 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-23 08:28:37 - smart_parking - INFO - Registered detector for camera 8
+2025-10-23 08:28:37 - smart_parking - INFO - Started detector for camera 8
+2025-10-23 08:28:39 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-23 08:28:39 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-23 08:28:39 - smart_parking - INFO - Camera FPS: 30
+2025-10-23 08:28:44 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-23 08:28:50 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-23 08:28:50 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-23 08:28:50 - smart_parking - INFO - Camera FPS: 30
+2025-10-23 08:29:05 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-23 08:29:09 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-23 08:29:09 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-23 08:29:09 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-23 08:29:15 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-23 08:29:20 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-23 08:29:38 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-23 08:29:38 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-23 08:29:38 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-23 08:29:38 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-23 08:29:41 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-23 08:29:45 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-23 08:29:53 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-23 08:29:53 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-23 08:29:53 - smart_parking - INFO - Registered detector for camera 8
+2025-10-23 08:29:53 - smart_parking - INFO - Started detector for camera 8
+2025-10-23 08:29:56 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-23 08:29:56 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-23 08:29:56 - smart_parking - INFO - Camera FPS: 30
+2025-10-23 08:29:57 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:29:58 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:29:59 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:00 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-23 08:30:00 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:01 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:03 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:04 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:05 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:07 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:08 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:09 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:10 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:12 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:13 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:14 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:15 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:17 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:18 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:19 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:20 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:22 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:23 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:24 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:25 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:27 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:28 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:29 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:30 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:32 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:33 - smart_parking - INFO - Processed 55 detections, updated 2 slots
+2025-10-23 08:30:34 - smart_parking - INFO - Processed 55 detections, updated 2 slots
+2025-10-23 08:30:35 - smart_parking - INFO - Processed 55 detections, updated 2 slots
+2025-10-23 08:30:37 - smart_parking - INFO - Processed 55 detections, updated 2 slots
+2025-10-23 08:30:38 - smart_parking - INFO - Processed 55 detections, updated 2 slots
+2025-10-23 08:30:39 - smart_parking - INFO - Processed 55 detections, updated 2 slots
+2025-10-23 08:30:40 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:41 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:42 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:44 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:45 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:45 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:46 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:30:47 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:48 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:49 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:50 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:51 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:53 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:54 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:55 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:56 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:58 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:30:59 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-23 08:30:59 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:31:00 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:31:01 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-23 08:31:01 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-23 08:31:01 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-23 08:31:01 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:31:05 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-23 08:31:09 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-23 08:31:09 - smart_parking - INFO - Shutting down Smart Parking API...
+2025-10-23 08:40:08 - smart_parking - INFO - Starting Smart Parking API...
+2025-10-23 08:40:08 - smart_parking - INFO - Event loop set for ai_listener
+2025-10-23 08:40:08 - smart_parking - INFO - Event loop configured for ai_listener
+2025-10-23 08:40:08 - smart_parking - INFO - Use POST /api/v1/detectors/{camera_id}/start to start camera detection
+2025-10-23 08:40:10 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-23 08:40:10 - smart_parking - INFO - WebSocket connected. Total: 2
+2025-10-23 08:40:14 - smart_parking - INFO - WebSocket disconnected. Total: 1
+2025-10-23 08:40:18 - smart_parking - INFO - Initialized YOLO detector for camera 8
+2025-10-23 08:40:18 - smart_parking - INFO - Started YOLO detector for camera 8
+2025-10-23 08:40:18 - smart_parking - INFO - Registered detector for camera 8
+2025-10-23 08:40:18 - smart_parking - INFO - Started detector for camera 8
+2025-10-23 08:40:21 - smart_parking - INFO - WebSocket connected. Total: 2
+2025-10-23 08:40:23 - smart_parking - INFO - Loaded YOLO model: checkpoint_last.pt
+2025-10-23 08:40:23 - smart_parking - INFO - Using stream URL: C:\Users\luumi\OneDrive - ptit.edu.vn\temp\sample2.mp4
+2025-10-23 08:40:24 - smart_parking - INFO - Camera FPS: 30
+2025-10-23 08:40:25 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:26 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:27 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:29 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:30 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:31 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:32 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:34 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:35 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:36 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:37 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:38 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:39 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:41 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:40:42 - smart_parking - INFO - Processed 53 detections, updated 2 slots
+2025-10-23 08:40:43 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:44 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:45 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:47 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:48 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:49 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:50 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:51 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:53 - smart_parking - INFO - Processed 54 detections, updated 2 slots
+2025-10-23 08:40:54 - smart_parking - INFO - Processed 54 detections, updated 3 slots
+2025-10-23 08:40:55 - smart_parking - INFO - Processed 54 detections, updated 3 slots
+2025-10-23 08:40:56 - smart_parking - INFO - Processed 54 detections, updated 3 slots
+2025-10-23 08:40:57 - smart_parking - INFO - Processed 54 detections, updated 3 slots
+2025-10-23 08:40:59 - smart_parking - INFO - WebSocket connected. Total: 3
+2025-10-23 08:40:59 - smart_parking - INFO - Processed 54 detections, updated 3 slots
+2025-10-23 08:41:00 - smart_parking - INFO - Processed 55 detections, updated 3 slots
+2025-10-23 08:41:01 - smart_parking - INFO - Processed 55 detections, updated 3 slots
+2025-10-23 08:41:02 - smart_parking - INFO - Processed 55 detections, updated 3 slots
+2025-10-23 08:41:03 - smart_parking - INFO - WebSocket disconnected. Total: 2
+2025-10-23 08:41:04 - smart_parking - INFO - Processed 55 detections, updated 3 slots
+2025-10-23 08:41:05 - smart_parking - INFO - Processed 55 detections, updated 3 slots
+2025-10-23 08:41:05 - smart_parking - INFO - WebSocket disconnected. Total: 1
+2025-10-23 08:41:06 - smart_parking - INFO - Processed 55 detections, updated 3 slots
+2025-10-23 08:41:07 - smart_parking - INFO - Processed 54 detections, updated 3 slots
+2025-10-23 08:41:09 - smart_parking - INFO - Processed 54 detections, updated 3 slots
+2025-10-23 08:41:10 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:11 - smart_parking - INFO - Processed 54 detections, updated 3 slots
+2025-10-23 08:41:12 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:14 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:15 - smart_parking - INFO - Processed 54 detections, updated 3 slots
+2025-10-23 08:41:16 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:17 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:19 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:20 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:21 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:22 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-23 08:41:22 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:23 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:25 - smart_parking - INFO - Stopped YOLO detector for camera 8
+2025-10-23 08:41:25 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-23 08:41:25 - smart_parking - INFO - Stopped detector for camera 8
+2025-10-23 08:41:25 - smart_parking - INFO - Processed 53 detections, updated 3 slots
+2025-10-23 08:41:31 - smart_parking - INFO - WebSocket connected. Total: 1
+2025-10-23 08:41:34 - smart_parking - INFO - WebSocket disconnected. Total: 0
+2025-10-23 08:41:34 - smart_parking - INFO - Shutting down Smart Parking API...

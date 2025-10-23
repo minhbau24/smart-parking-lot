@@ -1,0 +1,30 @@
+# Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Database
+sqlalchemy[asyncio]==2.0.23
+asyncmy==0.2.9
+alembic==1.12.1
+
+# Config & Validation
+pydantic==2.5.0
+pydantic-settings==2.1.0
+python-dotenv==1.0.0
+
+# YOLO & Computer Vision
+ultralytics==8.0.200  # YOLOv8
+opencv-python==4.7.0.72  # Video processing
+
+# Utilities
+shapely==2.0.2        # Polygon operations
+numpy==1.26.2
+
+# WebSocket & Real-time
+python-multipart==0.0.6
+websockets==12.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2         # For testing async endpoints
