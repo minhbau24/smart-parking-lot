@@ -21,6 +21,10 @@ class SmartParkingApp {
         this.latestSlots = [];
         this.lastDetectionTime = 0;
 
+        // Video dimensions for coordinate scaling
+        this.videoWidth = 1280;  // Original video width (from naturalWidth)
+        this.videoHeight = 720;  // Original video height (from naturalHeight)
+
         // Stats
         this.stats = {
             total: 0,
@@ -88,35 +92,75 @@ class SmartParkingApp {
         this.videoImg.style.display = 'block';
 
         console.log(`Switched to camera ${this.currentCameraId}`);
+
+        // Auto-start detector for this camera
+        this.startDetector(this.currentCameraId);
+    }
+
+    async startDetector(cameraId) {
+        try {
+            console.log(`Starting detector for camera ${cameraId}...`);
+            const response = await fetch(`${this.apiBase}/detector/${cameraId}/start`, {
+                method: 'POST'
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('✅ Detector started:', result);
+            } else {
+                const error = await response.json();
+                console.warn('⚠️ Detector already running or error:', error);
+            }
+        } catch (error) {
+            console.error('❌ Error starting detector:', error);
+        }
     }
 
     initCanvas() {
-        // Match canvas size with video when it loads
+        // Resize when video metadata loads (get original dimensions)
+        this.videoImg.addEventListener('loadedmetadata', () => {
+            this.videoWidth = this.videoImg.naturalWidth || 1280;
+            this.videoHeight = this.videoImg.naturalHeight || 720;
+            console.log(`Video dimensions: ${this.videoWidth}x${this.videoHeight}`);
+            this.resizeCanvas();
+        });
+
+        // Also resize when video loads
         this.videoImg.addEventListener('load', () => {
             this.resizeCanvas();
         });
 
-        // Also resize on window resize
+        // Resize on window resize
         window.addEventListener('resize', () => {
             this.resizeCanvas();
         });
 
-        // Update canvas size periodically (for dynamic video loading)
+        // Update canvas size periodically
         setInterval(() => {
             this.resizeCanvas();
         }, 1000);
     }
 
     resizeCanvas() {
-        // Get actual rendered video dimensions
-        const videoWidth = this.videoImg.clientWidth;
-        const videoHeight = this.videoImg.clientHeight;
+        // Wait for video to have dimensions
+        if (this.videoImg.naturalWidth === 0 || this.videoImg.naturalHeight === 0) {
+            return; // Video not loaded yet
+        }
 
-        if (videoWidth > 0 && videoHeight > 0) {
-            this.canvas.width = videoWidth;
-            this.canvas.height = videoHeight;
-            this.canvas.style.width = videoWidth + 'px';
-            this.canvas.style.height = videoHeight + 'px';
+        // Get actual displayed video size (after object-fit: contain)
+        const displayWidth = this.videoImg.clientWidth;
+        const displayHeight = this.videoImg.clientHeight;
+
+        if (displayWidth > 0 && displayHeight > 0) {
+            // Update canvas to match displayed video
+            this.canvas.width = displayWidth;
+            this.canvas.height = displayHeight;
+            this.canvas.style.width = displayWidth + 'px';
+            this.canvas.style.height = displayHeight + 'px';
+
+            // Update original dimensions for scaling
+            this.videoWidth = this.videoImg.naturalWidth;
+            this.videoHeight = this.videoImg.naturalHeight;
         }
     }
 
@@ -154,7 +198,7 @@ class SmartParkingApp {
             this.latestDetections = data.detections || [];
             this.latestSlots = data.slots || [];
 
-            console.log(`Received ${this.latestDetections.length} detections`);
+            console.log(`Received ${this.latestDetections.length} detections, ${this.latestSlots.length} slots`);
 
             // Update stats
             this.updateStats(data.slots);
@@ -210,17 +254,17 @@ class SmartParkingApp {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         // Draw latest detection bboxes (vehicles detected by YOLO)
-        if (this.latestDetections && this.latestDetections.length > 0) {
-            this.latestDetections.forEach(detection => {
-                this.drawDetectionBox(detection);
-            });
-        }
+        // if (this.latestDetections && this.latestDetections.length > 0) {
+        //     this.latestDetections.forEach(detection => {
+        //         this.drawDetectionBox(detection);
+        //     });
+        // }
 
         // Draw slot indicators (if slot polygons available)
         if (this.latestSlots && this.latestSlots.length > 0) {
             this.latestSlots.forEach(slot => {
                 // TODO: Draw actual slot polygons from DB
-                // this.drawSlotIndicator(slot);
+                this.drawSlotIndicator(slot);
             });
         }
     }
@@ -276,19 +320,69 @@ class SmartParkingApp {
     }
 
     drawSlotIndicator(slot) {
-        // This is a placeholder - you'll need actual polygon coordinates
-        // For demo, just show slot status
-        const color = slot.status === 'occupied' ? '#f44336' : '#4CAF50';
+        try {
+            // Parse polygon from database (format: [[x1,y1], [x2,y2], ...] or JSON string)
+            const polygon = typeof slot.polygon === 'string'
+                ? JSON.parse(slot.polygon)
+                : slot.polygon;
 
-        // Draw a sample box (replace with actual polygon from DB)
-        this.ctx.strokeStyle = color;
-        this.ctx.lineWidth = 3;
-        this.ctx.strokeRect(50, 50, 100, 150); // Placeholder position
+            if (!polygon || polygon.length < 3) {
+                console.warn('Invalid polygon for slot:', slot);
+                return;
+            }
 
-        // Draw slot label
-        this.ctx.fillStyle = color;
-        this.ctx.font = '16px Arial';
-        this.ctx.fillText(`Slot ${slot.slot_id}`, 60, 70);
+            console.log(`Drawing slot ${slot.label} with ${polygon.length} points`, polygon);
+
+            // Calculate scale factors: original video coords → canvas display coords
+            const scaleX = this.canvas.width / this.videoWidth;
+            const scaleY = this.canvas.height / this.videoHeight;
+
+            console.log(`Scale: ${scaleX.toFixed(2)}x${scaleY.toFixed(2)}, Canvas: ${this.canvas.width}x${this.canvas.height}, Video: ${this.videoWidth}x${this.videoHeight}`);
+
+            // Draw polygon path
+            this.ctx.beginPath();
+            const firstPoint = polygon[0];
+            this.ctx.moveTo(firstPoint[0] * scaleX, firstPoint[1] * scaleY);
+
+            for (let i = 1; i < polygon.length; i++) {
+                this.ctx.lineTo(polygon[i][0] * scaleX, polygon[i][1] * scaleY);
+            }
+            this.ctx.closePath();
+
+            // Style based on occupancy status
+            if (slot.status === 'occupied') {
+                this.ctx.strokeStyle = '#f44336';  // Red
+                this.ctx.fillStyle = 'rgba(244, 67, 54, 0.3)';
+            } else {
+                this.ctx.strokeStyle = '#4CAF50';  // Green
+                this.ctx.fillStyle = 'rgba(76, 175, 80, 0.3)';
+            }
+
+            this.ctx.lineWidth = 3;
+            this.ctx.stroke();
+            this.ctx.fill();
+
+            // Draw slot label at polygon center
+            const centerX = polygon.reduce((sum, p) => sum + p[0], 0) / polygon.length;
+            const centerY = polygon.reduce((sum, p) => sum + p[1], 0) / polygon.length;
+
+            // Label with black outline for visibility
+            this.ctx.font = 'bold 18px Arial';
+            this.ctx.textAlign = 'center';
+            this.ctx.textBaseline = 'middle';
+
+            // Draw text outline
+            this.ctx.strokeStyle = 'black';
+            this.ctx.lineWidth = 4;
+            this.ctx.strokeText(slot.label, centerX * scaleX, centerY * scaleY);
+
+            // Draw text fill
+            this.ctx.fillStyle = 'white';
+            this.ctx.fillText(slot.label, centerX * scaleX, centerY * scaleY);
+
+        } catch (error) {
+            console.error('Error drawing slot indicator:', error, slot);
+        }
     }
 }
 

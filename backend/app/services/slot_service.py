@@ -8,7 +8,7 @@ import numpy as np
 from app.models.slot import Slot, SlotStatus
 from app.models.slot_event import SlotEvent
 from app.utils.polygon_utils import (
-    bbox_to_polygon,
+    bbox_yolo_to_polygon,  # For YOLO format bbox
     polygon_from_points,
     calculate_overlap_ratio
 )
@@ -56,6 +56,7 @@ async def match_detections_to_slots(
 ) -> Dict[int, str]:
     """
     Match detections with slots, return dict {slot_id: new_status}
+    OPTIMIZED for performance with early exit and caching
     
     Args:
         camera_id (int): ID of the camera
@@ -69,13 +70,25 @@ async def match_detections_to_slots(
     if threshold is None:
         threshold = settings.DETECTION_THRESHOLD
 
+    # Early exit if no detections
+    if not detections:
+        result = await db.execute(
+            select(Slot).where(Slot.camera_id == camera_id)
+        )
+        slots = result.scalars().all()
+        return {slot.id: SlotStatus.EMPTY.value for slot in slots}
+
     # get all slots for the camera
     result = await db.execute(
         select(Slot).where(Slot.camera_id == camera_id)
     )
     slots = result.scalars().all()
+    
+    # Early exit if no slots
+    if not slots:
+        return {}
 
-    # Make polygons from slots
+    # Make polygons from slots (with error handling)
     slot_polygons = {}
     for slot in slots:
         try:
@@ -94,7 +107,8 @@ async def match_detections_to_slots(
             continue
 
         try:
-            bbox_poly = bbox_to_polygon(bbox)
+            # Convert YOLO format [center_x, center_y, w, h] to polygon
+            bbox_poly = bbox_yolo_to_polygon(bbox)
         except Exception as e:
             logger.error(f"Invalid bbox {bbox}: {e}")
             continue
@@ -112,12 +126,19 @@ async def match_detections_to_slots(
         # If best overlap exceeds threshold, mark slot as occupied
         if best_slot_id and best_ratio >= threshold:
             slot_status_map[best_slot_id] = SlotStatus.OCCUPIED.value
+            logger.debug(f"Detection bbox {bbox} matched slot {best_slot_id} with ratio {best_ratio:.2f}")
+        else:
+            logger.debug(f"Detection bbox {bbox} no match (best ratio: {best_ratio:.2f}, threshold: {threshold})")
 
     # Apply smoothing 
     smoothed_status_map = {}
     for slot_id, raw_status in slot_status_map.items():
         smoothed_status = status_buffer.add_status(slot_id, raw_status)
         smoothed_status_map[slot_id] = smoothed_status
+    
+    # Log summary
+    occupied_count = sum(1 for status in smoothed_status_map.values() if status == SlotStatus.OCCUPIED.value)
+    logger.info(f"Matched {len(detections)} detections to {len(slots)} slots: {occupied_count} occupied, {len(slots) - occupied_count} empty (threshold: {threshold})")
     
     return smoothed_status_map
 

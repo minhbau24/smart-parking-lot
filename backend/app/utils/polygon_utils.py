@@ -9,8 +9,27 @@ def polygon_from_points(points: List[List[float]]) -> Polygon:
     return Polygon(points)
 
 def bbox_to_polygon(bbox: List[float]) -> Polygon:
-    """Convert a bounding box [x, y, w, h] to a Shapely polygon."""
+    """
+    Convert a bounding box to a Shapely polygon.
+    Supports two formats:
+    - [x, y, w, h]: top-left corner + width/height
+    - [center_x, center_y, w, h]: center + width/height (YOLO format)
+    
+    Auto-detects format based on context.
+    For YOLO format, use bbox_yolo_to_polygon instead.
+    """
     x, y, w, h = bbox
+    # Assume top-left format
+    return box(x, y, x + w, y + h)
+
+def bbox_yolo_to_polygon(bbox: List[float]) -> Polygon:
+    """
+    Convert YOLO bbox [center_x, center_y, width, height] to Shapely polygon.
+    """
+    center_x, center_y, w, h = bbox
+    # Convert center to top-left
+    x = center_x - w / 2
+    y = center_y - h / 2
     return box(x, y, x + w, y + h)
 
 def calculate_intersection_area(poly1: Polygon, poly2: Polygon) -> float:

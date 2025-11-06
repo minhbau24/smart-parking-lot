@@ -7,8 +7,11 @@ import numpy as np
 from typing import Optional, Dict
 from collections import deque
 from threading import Thread, Lock
+from sqlalchemy import select
 
 from app.core.logger import logger
+from app.core.settings import settings
+from app.models.slot import Slot
 from app.services.slot_service import match_detections_to_slots, update_slot_statuses
 from app.services.websocket_manager import manager
 from app.core.db import async_session_maker
@@ -34,9 +37,14 @@ class YOLODetector:
         self.frame_lock = Lock()
         self.frame_id = 0
         
-        # Detection settings
-        self.detection_interval = 3  # Detect every N frames
+        # Detection settings - OPTIMIZED for performance
+        self.detection_interval = settings.DETECTION_INTERVAL  # From config
         self.target_classes = [2, 5, 7]  # car, bus, truck in COCO
+        
+        # Processing state
+        self.is_processing = False  # Flag to prevent concurrent processing
+        self.last_process_time = 0
+        self.min_process_interval = settings.MIN_PROCESS_INTERVAL  # From config
         
         # Frame buffer for sync
         self.frame_buffer = deque(maxlen=60)
@@ -115,9 +123,20 @@ class YOLODetector:
                 }
                 self.frame_buffer.append(frame_info)
                 
-                # Run detection every N frames
-                if self.frame_id % self.detection_interval == 0:
-                    self._process_frame(frame, self.frame_id, current_time)
+                # Run detection with throttling
+                current_process_time = time.time()
+                should_process = (
+                    self.frame_id % self.detection_interval == 0 and  # Every N frames
+                    not self.is_processing and  # Not already processing
+                    (current_process_time - self.last_process_time) >= self.min_process_interval  # Min interval
+                )
+                
+                if should_process:
+                    self.is_processing = True
+                    self.last_process_time = current_process_time
+                    
+                    # Process in thread to avoid blocking capture loop
+                    Thread(target=self._process_frame, args=(frame.copy(), self.frame_id, current_time), daemon=True).start()
                 
                 # Control FPS
                 time.sleep(1.0 / fps)
@@ -129,7 +148,7 @@ class YOLODetector:
                 self.cap.release()
     
     def _process_frame(self, frame, frame_id: int, timestamp: float):
-        """Process a single frame with YOLO"""
+        """Process a single frame with YOLO (runs in separate thread)"""
         try:
             # Run YOLO inference
             results = self.model(frame, verbose=False)
@@ -176,6 +195,9 @@ class YOLODetector:
         
         except Exception as e:
             logger.error(f"Error processing frame {frame_id}: {e}")
+        finally:
+            # Reset processing flag
+            self.is_processing = False
     
     async def _handle_detections(self, detections: list, frame_id: int, timestamp: float):
         """Handle detections: match slots, update DB, broadcast"""
@@ -194,13 +216,22 @@ class YOLODetector:
                 # Ensure all changes are committed
                 await db.commit()
                 
-                # Prepare data for broadcast
+                # Get full slot data with polygon for frontend
+                slot_ids = list(slot_status_map.keys())
+                stmt = select(Slot).where(Slot.id.in_(slot_ids))
+                result = await db.execute(stmt)
+                slots = result.scalars().all()
+                
+                # Prepare data for broadcast with polygon
                 slots_data = [
                     {
-                        "slot_id": slot_id,
-                        "status": status
+                        "id": slot.id,
+                        "slot_id": slot.id,  # For backward compatibility
+                        "label": slot.label,
+                        "polygon": slot.polygon,  # Include polygon coordinates
+                        "status": slot_status_map.get(slot.id, slot.status)
                     }
-                    for slot_id, status in slot_status_map.items()
+                    for slot in slots
                 ]
                 
                 # Broadcast via WebSocket with frame sync info
