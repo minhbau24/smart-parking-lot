@@ -13,14 +13,15 @@ import {
 import { Video, ParkingCircle, AlertCircle, Activity } from "lucide-react";
 import { useCamera } from "@/hooks/useCamera";
 import { LiveView } from "@/components/LiveView";
-import { SlotStatus } from "@/types/slot.types";
-import { useWebSocket } from "@/hooks/useWebSocket";
 
 const Dashboard = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { cameras, loading } = useCamera();
 
   const [selectedCameraId, setSelectedCameraId] = useState<number | null>(null);
+  const [totalSlots, setTotalSlots] = useState(0);
+  const [emptySlots, setEmptySlots] = useState(0);
+  const [occupiedSlots, setOccupiedSlots] = useState(0);
 
   // Get camera from URL or default to first camera
   useEffect(() => {
@@ -34,19 +35,12 @@ const Dashboard = () => {
 
   const selectedCamera = cameras.find((c) => c.id === selectedCameraId);
 
-  // Get real-time stats from WebSocket
-  const { slots } = useWebSocket(selectedCameraId);
-
   const handleCameraChange = (value: string) => {
     const cameraId = parseInt(value);
     setSelectedCameraId(cameraId);
     setSearchParams({ camera: cameraId.toString() });
   };
 
-  // Calculate stats
-  const totalSlots = slots.length;
-  const emptySlots = slots.filter((s) => s.status === SlotStatus.EMPTY).length;
-  const occupiedSlots = slots.filter((s) => s.status === SlotStatus.OCCUPIED).length;
   const activeCameras = cameras.filter((c) => c.status === "active").length;
 
   return (
@@ -148,7 +142,14 @@ const Dashboard = () => {
           </div>
         </Card>
       ) : selectedCamera ? (
-        <LiveView camera={selectedCamera} />
+        <LiveView
+          camera={selectedCamera}
+          onStatsUpdate={(total, empty, occupied) => {
+            setTotalSlots(total);
+            setEmptySlots(empty);
+            setOccupiedSlots(occupied);
+          }}
+        />
       ) : (
         <Card className="overflow-hidden">
           <div className="border-b border-border bg-muted/50 px-6 py-4">

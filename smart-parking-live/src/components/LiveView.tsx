@@ -11,11 +11,12 @@ import { useDetector } from "@/hooks/useDetector";
 
 interface LiveViewProps {
   camera: Camera;
+  onStatsUpdate?: (totalSlots: number, emptySlots: number, occupiedSlots: number) => void;
 }
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api/v1";
 
-export const LiveView = ({ camera }: LiveViewProps) => {
+export const LiveView = ({ camera, onStatsUpdate }: LiveViewProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const videoRef = useRef<HTMLImageElement>(null);
   const [showDetections, setShowDetections] = useState(true);
@@ -86,6 +87,16 @@ export const LiveView = ({ camera }: LiveViewProps) => {
       window.removeEventListener("resize", resizeCanvas);
     };
   }, []);
+
+  // Update parent stats when slots change
+  useEffect(() => {
+    if (onStatsUpdate) {
+      const totalSlots = slots.length;
+      const emptySlots = slots.filter((s) => s.status === SlotStatus.EMPTY).length;
+      const occupiedSlots = slots.filter((s) => s.status === SlotStatus.OCCUPIED).length;
+      onStatsUpdate(totalSlots, emptySlots, occupiedSlots);
+    }
+  }, [slots, onStatsUpdate]);
 
   // Render overlays
   useEffect(() => {
