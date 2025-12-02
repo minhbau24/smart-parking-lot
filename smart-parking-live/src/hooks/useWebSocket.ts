@@ -30,11 +30,18 @@ export const useWebSocket = (cameraId: number | null): UseWebSocketReturn => {
   const wsRef = useRef<WebSocket | null>(null);
   const reconnectTimeoutRef = useRef<NodeJS.Timeout>();
   const reconnectAttemptsRef = useRef(0);
+  const shouldReconnectRef = useRef(true);
 
   const connect = useCallback(() => {
     if (!cameraId) {
       console.log("No camera ID provided, skipping WebSocket connection");
       return;
+    }
+
+    // Clear any pending reconnection attempts
+    if (reconnectTimeoutRef.current) {
+      clearTimeout(reconnectTimeoutRef.current);
+      reconnectTimeoutRef.current = undefined;
     }
 
     // Close existing connection
@@ -57,7 +64,8 @@ export const useWebSocket = (cameraId: number | null): UseWebSocketReturn => {
       try {
         const message: WebSocketMessage = JSON.parse(event.data);
 
-        if (message.type === "slot_update") {
+        // Only process messages for the current camera
+        if (message.type === "slot_update" && message.camera_id === cameraId) {
           setDetections(message.detections || []);
           setSlots(message.slots || []);
           setLastUpdate(message.timestamp || new Date().toISOString());
@@ -71,17 +79,20 @@ export const useWebSocket = (cameraId: number | null): UseWebSocketReturn => {
       console.log("❌ WebSocket disconnected from camera", cameraId);
       setIsConnected(false);
 
-      // Exponential backoff reconnect
-      const delay = Math.min(
-        1000 * Math.pow(2, reconnectAttemptsRef.current),
-        30000
-      );
-      console.log(`Reconnecting in ${delay}ms...`);
+      // Only reconnect if we should (not during camera switch or unmount)
+      if (shouldReconnectRef.current) {
+        // Exponential backoff reconnect
+        const delay = Math.min(
+          1000 * Math.pow(2, reconnectAttemptsRef.current),
+          30000
+        );
+        console.log(`Reconnecting in ${delay}ms...`);
 
-      reconnectTimeoutRef.current = setTimeout(() => {
-        reconnectAttemptsRef.current++;
-        connect();
-      }, delay);
+        reconnectTimeoutRef.current = setTimeout(() => {
+          reconnectAttemptsRef.current++;
+          connect();
+        }, delay);
+      }
     };
 
     ws.onerror = (error) => {
@@ -101,16 +112,24 @@ export const useWebSocket = (cameraId: number | null): UseWebSocketReturn => {
   }, [connect]);
 
   useEffect(() => {
+    shouldReconnectRef.current = true;
+
     if (cameraId) {
       connect();
     }
 
     return () => {
-      if (wsRef.current) {
-        wsRef.current.close();
-      }
+      // Prevent reconnection during cleanup
+      shouldReconnectRef.current = false;
+
       if (reconnectTimeoutRef.current) {
         clearTimeout(reconnectTimeoutRef.current);
+        reconnectTimeoutRef.current = undefined;
+      }
+
+      if (wsRef.current) {
+        wsRef.current.close();
+        wsRef.current = null;
       }
     };
   }, [connect, cameraId]);
