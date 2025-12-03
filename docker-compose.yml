@@ -1,0 +1,89 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  db:
+    image: mysql:8.0
+    container_name: smart-parking-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-smartparking2024}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-smart_parking}
+      MYSQL_USER: ${MYSQL_USER:-parking_user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-parking_pass}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - smart-parking-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-smartparking2024}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend API (FastAPI)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: smart-parking-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=mysql+aiomysql://${MYSQL_USER:-parking_user}:${MYSQL_PASSWORD:-parking_pass}@db:3306/${MYSQL_DATABASE:-smart_parking}
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - DEBUG=${DEBUG:-False}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - DETECTION_THRESHOLD=${DETECTION_THRESHOLD:-0.3}
+      - SMOOTHING_FRAMES=${SMOOTHING_FRAMES:-3}
+      - DETECTION_INTERVAL=${DETECTION_INTERVAL:-5}
+      - MIN_PROCESS_INTERVAL=${MIN_PROCESS_INTERVAL:-0.5}
+    volumes:
+      - ./backend/logs:/app/logs
+      - ./backend/checkpoint_last.pt:/app/checkpoint_last.pt
+      - ./backend/yolov8n.pt:/app/yolov8n.pt
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - smart-parking-network
+    healthcheck:
+      test: [ "CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Frontend (React + Vite)
+  frontend:
+    build:
+      context: ./smart-parking-live
+      dockerfile: Dockerfile
+    container_name: smart-parking-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000/api/v1
+      - VITE_WS_BASE_URL=ws://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - smart-parking-network
+    healthcheck:
+      test: [ "CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/" ]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  smart-parking-network:
+    driver: bridge

@@ -66,6 +66,14 @@ async def slot_statistics(
     stats = await get_slot_status(camera_id, db)
     return stats
 
+@router.get("/slots/status", response_model=SlotStatusResponse)
+async def slot_statistics(
+    db: AsyncSession = Depends(get_db_session)
+):
+    """Lấy thống kê tất cả slots"""
+    stats = await get_slot_status(None, db)
+    return stats
+
 @router.delete("/slots/{slot_id}", status_code=204)
 async def delete_slot(
     slot_id: int,
