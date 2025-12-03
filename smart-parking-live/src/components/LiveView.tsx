@@ -151,20 +151,17 @@ export const LiveView = ({ camera, onStatsUpdate }: LiveViewProps) => {
     ctx.fillStyle = "rgba(239, 68, 68, 0.1)";
     ctx.fillRect(x, y, w, h);
 
-    // Draw label
-    const label = `${detection.class_name} ${(detection.confidence * 100).toFixed(0)}%`;
-    ctx.font = "bold 14px Arial";
-    const textMetrics = ctx.measureText(label);
-    const textHeight = 20;
-    const padding = 4;
-
-    // Label background
-    ctx.fillStyle = "rgba(239, 68, 68, 0.9)";
-    ctx.fillRect(x, y - textHeight - padding, textMetrics.width + padding * 2, textHeight);
-
-    // Label text
-    ctx.fillStyle = "#FFFFFF";
-    ctx.fillText(label, x + padding, y - padding - 4);
+    // Label is hidden - only show bounding box
+    // Uncomment below to show detection class name and confidence
+    // const label = `${detection.class_name} ${(detection.confidence * 100).toFixed(0)}%`;
+    // ctx.font = "bold 14px Arial";
+    // const textMetrics = ctx.measureText(label);
+    // const textHeight = 20;
+    // const padding = 4;
+    // ctx.fillStyle = "rgba(239, 68, 68, 0.9)";
+    // ctx.fillRect(x, y - textHeight - padding, textMetrics.width + padding * 2, textHeight);
+    // ctx.fillStyle = "#FFFFFF";
+    // ctx.fillText(label, x + padding, y - padding - 4);
   };
 
   const drawSlotPolygon = (

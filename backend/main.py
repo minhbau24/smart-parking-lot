@@ -20,6 +20,13 @@ async def lifespan(app: FastAPI):
     ai_listener.set_event_loop(loop)
     logger.info("Event loop configured for ai_listener")
     
+    # Load YOLO model globally at startup
+    try:
+        ai_listener.load_yolo_model("checkpoint_last.pt")
+        logger.info("[SUCCESS] YOLO model pre-loaded successfully")
+    except Exception as e:
+        logger.error(f"[ERROR] Failed to pre-load YOLO model: {e}")
+    
     # Note: Detectors are now started dynamically via API
     # Use POST /api/v1/detectors/{camera_id}/start to start detection
     logger.info("Use POST /api/v1/detectors/{camera_id}/start to start camera detection")

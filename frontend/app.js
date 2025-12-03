@@ -213,6 +213,31 @@ class SmartParkingApp {
                 document.getElementById('detection-fps').textContent = fps.toFixed(1);
             }
             this.lastDetectionTime = now;
+        } else if (data.type === 'detector_event') {
+            console.log(`Detector event for camera ${data.camera_id}: ${data.event}`);
+
+            if (data.event === 'started') {
+                // Reset state when detector restarts
+                console.log('🔄 Detector restarted, clearing buffers');
+                this.latestDetections = [];
+                this.latestSlots = [];
+                this.lastDetectionTime = 0;
+
+                // Clear canvas
+                const ctx = this.canvas.getContext('2d');
+                ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                // Reset stats
+                this.stats = { total: 0, empty: 0, occupied: 0 };
+                this.updateStats([]);
+            } else if (data.event === 'stopped') {
+                console.log('⏹️ Detector stopped');
+                // Clear display
+                this.latestDetections = [];
+                this.latestSlots = [];
+                const ctx = this.canvas.getContext('2d');
+                ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            }
         }
     }
 

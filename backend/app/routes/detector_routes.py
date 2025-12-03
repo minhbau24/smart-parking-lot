@@ -14,7 +14,7 @@ router = APIRouter()
 
 class StartDetectorRequest(BaseModel):
     """Request to start detector for a camera"""
-    model_path: str = "checkpoint_last.pt"
+    yolo_model_path: str = "checkpoint_last.pt"
 
 
 class DetectorResponse(BaseModel):
@@ -63,7 +63,7 @@ async def start_detector(
         init_detector(
             camera_id=camera_id,
             stream_url=camera.stream_url,
-            model_path=request.model_path
+            yolo_model_path=request.yolo_model_path
         )
         
         logger.info(f"Started detector for camera {camera_id}")

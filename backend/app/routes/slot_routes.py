@@ -65,3 +65,22 @@ async def slot_statistics(
     """Lấy thống kê slots theo camera"""
     stats = await get_slot_status(camera_id, db)
     return stats
+
+@router.delete("/slots/{slot_id}", status_code=204)
+async def delete_slot(
+    slot_id: int,
+    db: AsyncSession = Depends(get_db_session)
+):
+    """
+    Delete a parking slot by ID.
+    """
+    result = await db.execute(
+        select(Slot).where(Slot.id == slot_id)
+    )
+    slot = result.scalar_one_or_none()
+    if not slot:
+        raise HTTPException(status_code=404, detail="Slot not found")
+    
+    await db.delete(slot)
+    await db.commit()
+    return None  # No content response

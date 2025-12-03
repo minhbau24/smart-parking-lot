@@ -22,10 +22,10 @@ class YOLODetector:
     Supports both detection and video streaming
     """
     
-    def __init__(self, camera_id: int, stream_url: str, model_path: str = "yolov8n.pt", loop=None):
+    def __init__(self, camera_id: int, stream_url: str, yolo_model_path: str = "yolov8n.pt", loop=None):
         self.camera_id = camera_id
         self.stream_url = stream_url
-        self.model_path = model_path
+        self.yolo_model_path = yolo_model_path
         
         # State
         self.running = False
@@ -77,11 +77,11 @@ class YOLODetector:
     
     def _detection_loop(self):
         """Main detection loop (runs in thread)"""
+        camera_opened = False
         try:
-            # Import YOLO here to avoid loading at startup
-            from ultralytics import YOLO
-            self.model = YOLO(self.model_path)
-            logger.info(f"Loaded YOLO model: {self.model_path}")
+            # Use global YOLO model (already loaded at startup)
+            self.model = get_yolo_model()
+            logger.info(f"Using global YOLO model for camera {self.camera_id}")
             
             # Convert stream_url to appropriate type
             # If it's a digit string (webcam index), convert to int
@@ -93,20 +93,47 @@ class YOLODetector:
                 logger.info(f"Using stream URL: {capture_source}")
             
             # Open video capture
+            logger.info(f"Opening video capture for: {capture_source}")
             self.cap = cv2.VideoCapture(capture_source)
+            
+            # Set timeout for network streams
+            if isinstance(capture_source, str) and capture_source.startswith(('rtsp://', 'http://', 'https://')):
+                self.cap.set(cv2.CAP_PROP_OPEN_TIMEOUT_MSEC, 5000)  # 5 second timeout
+                logger.info("Set 5s timeout for network stream")
+            
             if not self.cap.isOpened():
-                logger.error(f"Failed to open camera: {capture_source}")
+                logger.error(f"[ERROR] Failed to open camera {self.camera_id}: {capture_source}")
+                logger.error("Check if stream URL is correct and accessible")
+                self.running = False
                 return
             
+            camera_opened = True
             fps = int(self.cap.get(cv2.CAP_PROP_FPS)) or 30
-            logger.info(f"Camera FPS: {fps}")
+            logger.info(f"[OK] Camera {self.camera_id} opened successfully. FPS: {fps}")
+            logger.info(f"[OK] Detection thread running for camera {self.camera_id}")
+            
+            # Track consecutive failures
+            consecutive_failures = 0
+            max_failures = 50  # Stop after 50 consecutive failures (~5s)
             
             while self.running:
                 ret, frame = self.cap.read()
                 if not ret:
-                    logger.warning("Failed to read frame")
+                    consecutive_failures += 1
+                    logger.warning(f"Failed to read frame from camera {self.camera_id} ({consecutive_failures}/{max_failures})")
+                    
+                    if consecutive_failures >= max_failures:
+                        logger.error(f"[ERROR] Camera {self.camera_id} failed {max_failures} times, stopping detector")
+                        self.running = False
+                        break
+                    
                     time.sleep(0.1)
                     continue
+                
+                # Reset failure counter on success
+                if consecutive_failures > 0:
+                    logger.info(f"Camera {self.camera_id} recovered after {consecutive_failures} failures")
+                    consecutive_failures = 0
                 
                 self.frame_id += 1
                 current_time = time.time()
@@ -142,10 +169,26 @@ class YOLODetector:
                 time.sleep(1.0 / fps)
         
         except Exception as e:
-            logger.error(f"Error in detection loop: {e}", exc_info=True)
+            logger.error(f"[CRITICAL] Error in detection loop for camera {self.camera_id}: {e}", exc_info=True)
         finally:
+            # Cleanup
             if self.cap:
                 self.cap.release()
+                logger.info(f"Released video capture for camera {self.camera_id}")
+            
+            # Mark as not running
+            self.running = False
+            
+            # Auto-remove from registry if failed to open
+            if not camera_opened:
+                logger.warning(f"Camera {self.camera_id} failed to start, removing from registry")
+                # Remove from global registry
+                global _detectors
+                if self.camera_id in _detectors:
+                    del _detectors[self.camera_id]
+                    logger.info(f"Removed failed detector for camera {self.camera_id}")
+            
+            logger.info(f"Detection thread stopped for camera {self.camera_id}")
     
     def _process_frame(self, frame, frame_id: int, timestamp: float):
         """Process a single frame with YOLO (runs in separate thread)"""
@@ -256,13 +299,16 @@ class YOLODetector:
     def get_stats(self) -> Dict:
         """Get detector statistics"""
         processed = sum(1 for f in self.frame_buffer if f['processed'])
+        has_frames = self.current_frame is not None
         return {
             "camera_id": self.camera_id,
             "running": self.running,
+            "healthy": self.running and has_frames,  # Healthy = running AND receiving frames
             "frame_id": self.frame_id,
             "processed_frames": processed,
             "total_frames": len(self.frame_buffer),
-            "detection_rate": f"{processed}/{len(self.frame_buffer)}"
+            "detection_rate": f"{processed}/{len(self.frame_buffer)}",
+            "has_video": has_frames
         }
 
 
@@ -272,6 +318,10 @@ _detectors: Dict[int, YOLODetector] = {}
 # Global event loop reference (set from main.py)
 _event_loop: Optional[asyncio.AbstractEventLoop] = None
 
+# Global YOLO model (loaded once at startup)
+_global_yolo_model = None
+_model_lock = Lock()
+
 
 def set_event_loop(loop: asyncio.AbstractEventLoop):
     """Set the event loop to use for all detectors"""
@@ -280,12 +330,43 @@ def set_event_loop(loop: asyncio.AbstractEventLoop):
     logger.info("Event loop set for ai_listener")
 
 
+def load_yolo_model(model_path: str = "yolov8n.pt"):
+    """Load YOLO model globally (call once at startup)"""
+    global _global_yolo_model
+    
+    with _model_lock:
+        if _global_yolo_model is not None:
+            logger.info("YOLO model already loaded")
+            return _global_yolo_model
+        
+        try:
+            from ultralytics import YOLO
+            logger.info(f"Loading YOLO model: {model_path}...")
+            _global_yolo_model = YOLO(model_path)
+            logger.info(f"[SUCCESS] YOLO model loaded successfully: {model_path}")
+            return _global_yolo_model
+        except Exception as e:
+            logger.error(f"Failed to load YOLO model: {e}", exc_info=True)
+            raise
+
+
+def get_yolo_model():
+    """Get the global YOLO model"""
+    global _global_yolo_model
+    
+    if _global_yolo_model is None:
+        logger.warning("YOLO model not loaded yet, loading now...")
+        return load_yolo_model()
+    
+    return _global_yolo_model
+
+
 def get_detector(camera_id: int) -> Optional[YOLODetector]:
     """Get detector for a specific camera"""
     return _detectors.get(camera_id)
 
 
-def init_detector(camera_id: int, stream_url: str, model_path: str = "yolov8n.pt"):
+def init_detector(camera_id: int, stream_url: str, yolo_model_path: str = "yolov8n.pt"):
     """Initialize and start detector for a camera"""
     # Check if detector already exists
     if camera_id in _detectors:
@@ -302,7 +383,7 @@ def init_detector(camera_id: int, stream_url: str, model_path: str = "yolov8n.pt
             loop = asyncio.get_event_loop()
     
     # Create and start detector
-    detector = YOLODetector(camera_id, stream_url, model_path, loop=loop)
+    detector = YOLODetector(camera_id, stream_url, yolo_model_path, loop=loop)
     detector.start()
     
     # Store in registry

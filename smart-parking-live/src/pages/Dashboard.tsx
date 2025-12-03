@@ -23,15 +23,13 @@ const Dashboard = () => {
   const [emptySlots, setEmptySlots] = useState(0);
   const [occupiedSlots, setOccupiedSlots] = useState(0);
 
-  // Get camera from URL or default to first camera
+  // Get camera from URL (do not auto-select)
   useEffect(() => {
     const cameraParam = searchParams.get("camera");
     if (cameraParam) {
       setSelectedCameraId(parseInt(cameraParam));
-    } else if (cameras.length > 0 && !selectedCameraId) {
-      setSelectedCameraId(cameras[0].id);
     }
-  }, [cameras, searchParams, selectedCameraId]);
+  }, [searchParams]);
 
   const selectedCamera = cameras.find((c) => c.id === selectedCameraId);
 

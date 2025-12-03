@@ -66,3 +66,18 @@ async def update_camera(
     await db.commit()
     await db.refresh(camera)
     return camera
+
+@router.delete("/cameras/{camera_id}", status_code=204)
+async def delete_camera(
+    camera_id: int,
+    db: AsyncSession = Depends(get_db_session)
+):
+    """Xoá camera"""
+    result = await db.execute(select(Camera).where(Camera.id == camera_id))
+    camera = result.scalar_one_or_none()
+    if not camera:
+        raise HTTPException(status_code=404, detail="Camera not found")
+    
+    await db.delete(camera)
+    await db.commit()
+    return None  # No content response

@@ -9,6 +9,8 @@ interface WebSocketMessage {
   detections?: Detection[];
   frame_id?: number;
   timestamp?: string;
+  event?: string; // For detector_event: 'started', 'stopped', 'error'
+  message?: string;
 }
 
 interface UseWebSocketReturn {
@@ -65,10 +67,26 @@ export const useWebSocket = (cameraId: number | null): UseWebSocketReturn => {
         const message: WebSocketMessage = JSON.parse(event.data);
 
         // Only process messages for the current camera
-        if (message.type === "slot_update" && message.camera_id === cameraId) {
-          setDetections(message.detections || []);
-          setSlots(message.slots || []);
-          setLastUpdate(message.timestamp || new Date().toISOString());
+        if (message.camera_id === cameraId) {
+          if (message.type === "slot_update") {
+            setDetections(message.detections || []);
+            setSlots(message.slots || []);
+            setLastUpdate(message.timestamp || new Date().toISOString());
+          } else if (message.type === "detector_event") {
+            console.log(`🔔 Detector event: ${message.event}`, message.message);
+
+            if (message.event === "started") {
+              // Reset state when detector restarts
+              console.log("🔄 Detector restarted, clearing buffers");
+              setDetections([]);
+              setSlots([]);
+              setLastUpdate(null);
+            } else if (message.event === "stopped") {
+              console.log("⏹️ Detector stopped, clearing display");
+              setDetections([]);
+              setSlots([]);
+            }
+          }
         }
       } catch (error) {
         console.error("Error parsing WebSocket message:", error);

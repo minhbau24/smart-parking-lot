@@ -9,7 +9,7 @@ export interface DetectorStatus {
 
 export const startDetector = async (cameraId: number): Promise<unknown> => {
   const response = await apiClient.post(`/detectors/${cameraId}/start`, {
-    model_path: "yolov8n.pt",
+    model_path: "checkpoint_last.pt",
   });
   return response.data;
 };
