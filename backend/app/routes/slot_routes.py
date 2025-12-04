@@ -41,6 +41,23 @@ async def create_slot(
     await db.refresh(slot)
     return slot
 
+@router.get("/slots/status", response_model=SlotStatusResponse)
+async def get_all_slots_status(
+    db: AsyncSession = Depends(get_db_session)
+):
+    """Lấy thống kê tất cả slots"""
+    stats = await get_slot_status(None, db)
+    return stats
+
+@router.get("/slots/stats/{camera_id}", response_model=SlotStatusResponse)
+async def slot_statistics(
+    camera_id: int,
+    db: AsyncSession = Depends(get_db_session)
+):
+    """Lấy thống kê slots theo camera"""
+    stats = await get_slot_status(camera_id, db)
+    return stats
+
 @router.get("/slots/{slot_id}", response_model=SlotResponse)
 async def get_slot(
     slot_id: int,
@@ -56,23 +73,6 @@ async def get_slot(
     if not slot:
         raise HTTPException(status_code=404, detail="Slot not found")
     return slot
-
-@router.get("/slots/stats/{camera_id}", response_model=SlotStatusResponse)
-async def slot_statistics(
-    camera_id: int,
-    db: AsyncSession = Depends(get_db_session)
-):
-    """Lấy thống kê slots theo camera"""
-    stats = await get_slot_status(camera_id, db)
-    return stats
-
-@router.get("/slots/status", response_model=SlotStatusResponse)
-async def slot_statistics(
-    db: AsyncSession = Depends(get_db_session)
-):
-    """Lấy thống kê tất cả slots"""
-    stats = await get_slot_status(None, db)
-    return stats
 
 @router.delete("/slots/{slot_id}", status_code=204)
 async def delete_slot(

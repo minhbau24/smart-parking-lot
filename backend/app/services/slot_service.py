@@ -189,19 +189,21 @@ async def update_slot_statuses(
     if updated_count > 0:
         logger.info(f"Updated {updated_count} slot status changes (ready to commit)")
 
-async def get_slot_status(camera_id: int, db: AsyncSession) -> Dict:
+async def get_slot_status(camera_id: int | None, db: AsyncSession) -> Dict:
     """
-    Get summary of slot statuses for a camera
+    Get summary of slot statuses for a camera or all cameras
     
     Args:
-        camera_id (int): ID of the camera
+        camera_id (int | None): ID of the camera, or None for all cameras
         db (AsyncSession): Database session
     Returns:
         Dict: Summary of slot statuses
     """
-    result = await db.execute(
-        select(Slot).where(Slot.camera_id == camera_id)
-    )
+    query = select(Slot)
+    if camera_id is not None:
+        query = query.where(Slot.camera_id == camera_id)
+    
+    result = await db.execute(query)
     slots = result.scalars().all()
 
     status = {
